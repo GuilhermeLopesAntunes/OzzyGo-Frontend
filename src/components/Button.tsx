@@ -9,20 +9,20 @@ interface props {
 
 export default function Button({children, type, size="sm", variant="primary"}: props){
     return (
-        <button className= {`font-bold border-b-6 ${sizeStyles[size]} ${variantStyles[variant]} sm:px-8 sm:h-14 sm:text-sm`}  type={type} >
+        <button className= {`font-bold border-b-6 ${sizeStyles[size]} ${variantStyles[variant]} `}  type={type} >
             {children}
         </button>
     )
 }
 
 const sizeStyles = {
-    sm: "px-4 h-12 text-xs",
-    md: "px-6 h-12 text-base",
-    lg: "px-6 py-3 text-lg",
+    sm: "px-4 h-12 text-xs sm:px-8 sm:h-14 sm:text-sm xl:text-xl xl:px-10 xl:h-16",
+    md: "px-6 h-12 text-base ",
+    lg: "px-18 py-5 rounded-3xl text-lg sm:text-2xl sm:px-30 xl:px-10 xl:text-xl",
 }
 
 const variantStyles = {
   primary: " bg-[#5B5DF0] rounded-2xl text-white border-[#4A4BBD] active:border-b-0",
-  secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
+  secondary: "bg-[#D95858] rounded-2xl text-white border-[#AB4646] active:border-b-0",
   outline: "border border-gray-400 text-gray-800 hover:bg-gray-100",
 };
