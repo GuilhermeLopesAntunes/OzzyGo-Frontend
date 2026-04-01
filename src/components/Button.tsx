@@ -9,7 +9,7 @@ interface props {
 
 export default function Button({children, type, size="sm", variant="primary"}: props){
     return (
-        <button className= {`font-bold border-b-6 ${sizeStyles[size]} ${variantStyles[variant]} `}  type={type} >
+        <button className= {`cursor-pointer font-bold border-b-6 ${sizeStyles[size]} ${variantStyles[variant]} `}  type={type} >
             {children}
         </button>
     )

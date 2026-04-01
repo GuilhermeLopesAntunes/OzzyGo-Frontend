@@ -15,10 +15,12 @@ MainCardInformation(){
     const { View } = useLottie(options);
 
     return (
-    <div className='flex flex-col xl:flex-row items-center gap-5'>
-        <div className='w-80 sm:w-100 xl:w-200'>{View}</div>;
+    <div className='flex flex-col xl:flex-row items-center justify-center gap-5 xl:justify-between mb-20'>
+        <div className='w-80 sm:w-96 xl:w-[400px] flex-shrink-0'>
+            {View}
+        </div>
         <div>
-            <h2 className='text-[#555353] xl:mb-20 mb-8 text-center font-bold text-2xl sm:text-4xl sm:w-150'>APRENDER NUNCA FOI TÃO DIVERTIDO! EXPLORE, JOGUE E CONQUISTE COM O OZZY</h2>
+            <h2 className='text-[#555353] xl:mb-20 mb-8 text-center font-bold text-2xl sm:text-3xl sm:w-150'>Aprender Nunca Foi Tão Divertido! Explore, Jogue e Conquiste Com o Ozzy!</h2>
             <div className='flex flex-col gap-5 xl:flex-row'>
                 <Button type='button' variant='primary' size='lg'>INICIAR AVENTURA</Button>
                 <Button type='button' variant='secondary' size='lg'>JÁ POSSUO CONTA</Button>
