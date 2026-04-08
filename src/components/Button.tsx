@@ -5,11 +5,13 @@ interface props {
     children: ReactNode
     size?: "sm" | "md" | "lg";
     variant?: "primary" | "secondary" | "outline";
+    className?: string;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export default function Button({children, type, size="sm", variant="primary"}: props){
+export default function Button({children, type, size="sm", variant="primary", className, onClick}: props){
     return (
-        <button className= {`cursor-pointer font-bold border-b-6 ${sizeStyles[size]} ${variantStyles[variant]} `}  type={type} >
+        <button onClick={onClick} className= {`${className} cursor-pointer font-bold border-b-6 ${sizeStyles[size]} ${variantStyles[variant]} `}  type={type} >
             {children}
         </button>
     )
