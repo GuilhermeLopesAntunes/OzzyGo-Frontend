@@ -18,7 +18,7 @@ export default function OzzyConversation({animationDataJson, text}: props) {
 
     return(
         <div className="flex gap-5">
-            <div className="w-15 shrink-0">{View}</div>
+            <div className="w-15 sm:w-25 shrink-0">{View}</div>
             <div>
                 <Message message={text}></Message>
             </div>
