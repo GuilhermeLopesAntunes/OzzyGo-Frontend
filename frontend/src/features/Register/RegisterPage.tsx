@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ProgressBar from "../../components/ProgressBar";
-import HeaderHomePage from "../homePage/components/HeaderHomePage";
 import OzzyConversation from "./components/OzzyConversation";
 import OzzyDefaultAnimation from "./lotties/OzzyDefaultAnimation.json"
 import Input from "../../components/Input/Input";
@@ -12,6 +11,7 @@ import PasswordIcon from "../../assets/icons/PasswordIcon.svg"
 import VisibilityControlIcon from "../../components/Input/lotties/passwordVisibility.json"
 import {useForm} from 'react-hook-form'
 import { useLoading } from "../../hooks/useLoading";
+import HeaderInitialPage from "../InitialPage/components/HeaderInitialPage";
 
 interface User {
     nickname: string
@@ -80,7 +80,7 @@ export default function RegisterPage() {
     return (
         <div className="mx-6 sm:mx-16 my-6 xl:mx-auto xl:max-w-6xl">
             <header>
-                <HeaderHomePage isRegister={true}/>
+                <HeaderInitialPage isRegister={true}/>
             </header>
             {stage == 0 &&
                 <div className="flex flex-col gap-8"> 
