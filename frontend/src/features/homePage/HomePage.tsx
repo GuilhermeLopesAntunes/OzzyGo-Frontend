@@ -41,8 +41,8 @@ export default function HomePage(){
  
 ];
     return(
-        <div className="mx-6 sm:mx-16 my-6 xl:mx-auto xl:max-w-6xl">
-          <HeaderHomePage />
+        <div className="">
+         
           {dataChallenge.map((data) => (
             <div key={data.subject.subject}> 
           
