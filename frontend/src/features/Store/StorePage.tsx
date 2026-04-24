@@ -14,6 +14,7 @@ const dataStore = [
         type: {
             name: "Comum",
             color: "#B2B2B2",
+            bgColor: "#FFFFFF",
             value: 50
         },
         nameItem: "Garoto Básico",
@@ -28,6 +29,7 @@ const dataStore = [
         type: {
             name: "Raro",
             color: "#0070DD",
+            bgColor: "#AAC8E6",
             value: 100
         },
         isSkin: true,
@@ -39,35 +41,54 @@ const dataStore = [
         icon: Robot,
         nameItem: "Robô",
         type: {
-            name: "Raro",
+            name: "Épico",
             color: "#A335EE",
-            value: 100
+            bgColor: "#DBC0ED",
+            value: 150
         },
         isSkin: true,
         descriptionItem: "Item de Robô Épico",
-        value: 200
     },
     {
         id: 4,
         icon: Robot,
         nameItem: "Robô",
         isSkin: true,
-        descriptionItem: "Item de Robô Épico",
-        value: 200
+        type: {
+            name: "Lendário",
+            color: "#F58B25",
+            bgColor: "#FFDFC0",
+            value: 200
+        },
+        descriptionItem: "Item de Robô Lendário",
+       
     },
     {
         id: 5,
         icon: Robot,
         nameItem: "Robô",
         isSkin: true,
+        type: {
+            name: "Mítico",
+            color: "#E60000",
+            bgColor: "#FFC3C3",
+            value: 250
+        },
         descriptionItem: "Item de Robô Épico",
-        value: 200
+        
     },
     {
         id: 6,
         icon: "Ninguém me para",
         nameItem: "Robô",
-        isSkin: true,
+        isSkin: false,
+        type: {
+            name: "Mítico",
+            color: "#E60000",
+            bgColor: "#FFC3C3",
+            value: 250
+        },
+        
         descriptionItem: "Título ",
         value: 200
     }
@@ -91,7 +112,8 @@ export default function StorePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
                 {dataStore.map((item) => (
-                    <CardItem key={item.id} descriptionItem={item.descriptionItem} nameItem={item.nameItem} value={item.value} icon={item.icon} />
+                    
+                    <CardItem key={item.id} colorType={item.type.color} bgColorType={item.type.bgColor} type={item.type.name} descriptionItem={item.descriptionItem} nameItem={item.nameItem} value={item.type.value} icon={item.icon} />
                 ))}
             </div>
         </main  >
