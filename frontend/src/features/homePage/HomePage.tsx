@@ -1,8 +1,6 @@
-import HeaderHomePage from "./components/HeaderHomePage";
 import Title from "./components/Title";
 import MathSubjectIcon from "../../assets/icons/MathIcon.svg"
 import PortSubjectIcon from "../../assets/icons/PortIcon.png"
-import ButtonPencil from "./components/ButtonPencil";
 import CardChallenge from "./components/CardChallenge";
 
 
