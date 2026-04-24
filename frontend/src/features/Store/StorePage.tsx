@@ -1,7 +1,7 @@
 import CardItem from "./components/CardItem"
-import BoyOne from "../../../public/itemsStore/boy.png"
-import BoyTwo from "../../../public/itemsStore/boy2.png"
-import Robot from "../../../public/itemsStore/robot.png"
+import BoyOne from "/public/itemsStore/boy.png"
+import BoyTwo from "/public/itemsStore/boy2.png"
+import Robot from "/public/itemsStore/robot.png"
 
 const dataStore = [
     {
