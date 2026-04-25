@@ -98,22 +98,44 @@ type statesPage = "title" | "skins"
 
 export default function StorePage() {
     const [page, setPage] = useState<statesPage>("skins")
+    const filteredItems = dataStore.filter((item) => {
+        if (page === "skins") return item.isSkin === true;
+        if (page === "title") return item.isSkin === false;
+        return false;
+    });
     return(
         <main>
-            <div className="w-full m-auto text-center">
-                <button className={`mr-5 ${page == "skins" ? "text-[#5B5DF0] underline font-bold" : ""}`}>
+            <div className="w-full m-auto text-center mb-6">
+        
+                <button 
+                    onClick={() => setPage("skins")}
+                    className={`mr-5 ${page === "skins" ? "text-[#5B5DF0] underline font-bold" : ""}`}
+                >
                     Perfil
                 </button>
-                <button className={`mr-5 ${page == "title" ? "text-[#5B5DF0] underline font-bold" : ""}`}>
+                <button 
+                    onClick={() => setPage("title")}
+                    className={`mr-5 ${page === "title" ? "text-[#5B5DF0] underline font-bold" : ""}`}
+                >
                     Títulos
                 </button>
             </div>
             
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
-                {dataStore.map((item) => (
-                    
-                    <CardItem key={item.id} colorType={item.type.color} bgColorType={item.type.bgColor} type={item.type.name} descriptionItem={item.descriptionItem} nameItem={item.nameItem} value={item.type.value} icon={item.icon} />
+    
+                {filteredItems.map((item) => (
+                    <CardItem 
+                        key={item.id} 
+                        isSkin={item.isSkin} 
+                        colorType={item.type.color} 
+                        bgColorType={item.type.bgColor} 
+                        type={item.type.name} 
+                        descriptionItem={item.descriptionItem} 
+                        nameItem={item.nameItem} 
+                        value={item.type.value} 
+                        icon={item.icon} 
+                    />
                 ))}
             </div>
         </main  >

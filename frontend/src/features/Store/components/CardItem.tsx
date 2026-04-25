@@ -1,21 +1,21 @@
 import Ruby from "../../../assets/icons/Ruby.svg"
 
 interface props {
-    icon: string,
+    icon?: string,
     nameItem: string,
     descriptionItem: string,
     value: number
     type: string,
     colorType: string,
     bgColorType?: string
-
+    isSkin: boolean
 
 }
-export default function CardItem({icon, nameItem, descriptionItem, value, colorType, bgColorType, type}: props){
+export default function CardItem({icon, nameItem, descriptionItem, value, colorType, bgColorType, type, isSkin}: props){
     return(
         <div className="bg-[#f5f5f5] px-4 py-5 flex flex-col items-center rounded-3xl">
             <div>
-                <img src={icon} className="" alt="Icone da loja" />
+                {isSkin ? (<img src={icon} className="" alt="Icone da loja" />) : (<span>{icon}</span>)}
             </div>
             <div className="flex flex-col self-auto w-full">
                 <span className="font-bold text-xl">{nameItem}</span>
