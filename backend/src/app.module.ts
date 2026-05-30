@@ -11,6 +11,7 @@ import { SchoolsModule } from './schools/schools.module';
 import { ClassroomsModule } from './classrooms/classrooms.module';
 import { StudentsModule } from './students/students.module';
 import { ProfessorsModule } from './professors/professors.module';
+import { ClassworkModule } from './classwork/classwork.module';
 
 @Module({
   imports: [
@@ -31,7 +32,8 @@ import { ProfessorsModule } from './professors/professors.module';
     SchoolsModule,
     ClassroomsModule,
     StudentsModule,
-    ProfessorsModule
+    ProfessorsModule,
+    ClassworkModule
   ],
   providers: [
     {
