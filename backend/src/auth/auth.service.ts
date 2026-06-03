@@ -27,9 +27,13 @@ export class AuthService {
     ) {}
 
     async register(dto: RegisterDto){
-        const existingUser = await this.userService.findByEmail(dto.email)
-        if(existingUser) {
+        const existingUserMail = await this.userService.findByEmail(dto.email)
+        const existingUserUsername = await this.userService.findByUsername(dto.username)
+        if(existingUserMail) {
             throw new ConflictException("Uma conta com esse email já existe")
+        }
+        if(existingUserUsername) {
+            throw new ConflictException("Uma conta com esse Apelido já existe")
         }
 
         const passwordHash = await bcrypt.hash(dto.password, 12)

@@ -12,6 +12,7 @@ import LoginPage from './features/LoginPage/LoginPage'
 import { OnboardingPage } from './features/OnBoarding/OnboardingPage'
 import { PrivateRoute } from './features/PrivateRoute/PrivateRoute'
 import { PublicRoute } from './features/PublicRoute/PublicRoute'
+import { ClassworkPage } from './features/ClassworkPlayer/ClassworkPage'
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path='/loja' element={<StorePage />}/>
           <Route path='/classificacao' element={<RankPage />}/>
           <Route path='/perfil' element={<ProfilePage />}/>
+          <Route path="/licao/:id" element={<ClassworkPage />} />
         </Route>
       </Routes>
     </>

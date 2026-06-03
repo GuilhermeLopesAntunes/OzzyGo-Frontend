@@ -40,6 +40,7 @@ export function OnboardingPage() {
         await studentService.joinClassroom(code);
         navigate('/pagina-inicial'); 
       }
+      window.location.reload()
     } catch (error: any) {
       setErrorMessage(
         error.response?.data?.message || 'Código inválido ou não encontrado.'

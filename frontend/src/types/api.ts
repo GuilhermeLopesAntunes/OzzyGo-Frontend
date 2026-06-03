@@ -1,6 +1,7 @@
 
 
 export type UserRole = "student" | "professor"; 
+export type QuestionType = 'multiple_choice' | 'fill_the_blanks' | 'essay';
 
 export interface User {
     id: string;
@@ -53,4 +54,44 @@ export interface VerifyEmailResponse {
     message: string;
     acessToken: string;
     user: User;
+}
+
+export interface MultipleChoiceDetail {
+    questionId: string;
+    prompt: string;
+    options: string[];
+    correctOptionIndex: number;
+}
+
+export interface FillTheBlanksDetail {
+    questionId: string;
+    promptWithBlanks: string;
+    correctAnswers: string[];
+}
+
+export interface EssayDetail {
+    questionId: string;
+    prompt: string;
+    minWords?: number;
+}
+
+export interface Question {
+    id: string;
+    classworkId: string;
+    type: QuestionType;
+    sequenceOrder: number;
+    xpReward: number;
+
+    multipleChoice: MultipleChoiceDetail | null;
+    fillTheBlanks: FillTheBlanksDetail | null;
+    essay: EssayDetail | null;
+}
+
+export interface Classwork {
+    id: string;
+    title: string;
+    description: string;
+    xpReward: number;
+    rubyReward: number;
+    questions: Question[];
 }

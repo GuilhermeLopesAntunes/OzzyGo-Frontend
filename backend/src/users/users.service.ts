@@ -51,6 +51,7 @@ async findByVerificationToken(token: string){
         )
     }
 
+
     async findById(id: string){
         return db.query.users.findFirst(
             {where: eq(users.id, id)}
