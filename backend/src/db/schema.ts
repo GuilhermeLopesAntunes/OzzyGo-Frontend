@@ -107,8 +107,8 @@ export const professorClassrooms = pgTable("professor_classrooms", {
 
 export const studentsRelations = relations(students, ({ one }) => ({
     user: one(users, {
-        fields: [students.id],      // O campo na tabela students
-        references: [users.id],     // O campo na tabela users
+        fields: [students.id],      
+        references: [users.id],     
     }),
 
     classroom: one(classrooms, {
@@ -134,6 +134,9 @@ export const classworks = pgTable("classworks", {
         .references(() => professors.id, { onDelete: "cascade" }),
     title: text("title").notNull(),
     description: text("description"),
+
+    subject: text("subject").notNull(),
+    difficulty: integer("difficulty").default(1).notNull(),
     
     xpReward: integer("xp_reward").default(50).notNull(),
     rubyReward: integer("ruby_reward").default(10).notNull(),
